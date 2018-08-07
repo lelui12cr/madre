@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.38)
 # Database: mother_day
-# Generation Time: 2018-08-06 06:01:36 +0000
+# Generation Time: 2018-08-07 03:20:09 +0000
 # ************************************************************
 
 
@@ -30,43 +30,13 @@ CREATE TABLE `competitors` (
   `name` varchar(200) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
-  `address` text,
   `province` varchar(50) DEFAULT NULL,
-  `canton` varchar(50) DEFAULT NULL,
   `mother_province` varchar(50) DEFAULT NULL,
-  `mother_canton` varchar(50) DEFAULT NULL,
   `reason` text,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `competitors` WRITE;
-/*!40000 ALTER TABLE `competitors` DISABLE KEYS */;
-
-INSERT INTO `competitors` (`id`, `name`, `email`, `phone`, `address`, `province`, `canton`, `mother_province`, `mother_canton`, `reason`, `created_at`)
-VALUES
-	(1,'Jr','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(2,'aJr2','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(3,'bJr3','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(4,'cJr4','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(5,'dJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(6,'zdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(7,'xdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(8,'vdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(9,'ndJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(10,'mdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(11,'sdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(12,'fdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(13,'gdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(14,'hdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(15,'kjdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(16,'ldJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(17,'pdJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(18,'odJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02'),
-	(19,'udJr5','junior!text.com','888888','asdjadjash','puntarenas','san jose','san jose','acosta','asdjbasdkjasdkjasdasdasdas\n','2018-08-05 22:46:02');
-
-/*!40000 ALTER TABLE `competitors` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table users
