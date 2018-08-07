@@ -3,6 +3,8 @@ include('config.php');
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+$table = isset($table) ? $table : 'competitors';
 $sqll = "SELECT * FROM $table";
 
 if (!mysqli_query($conn, $sqll))

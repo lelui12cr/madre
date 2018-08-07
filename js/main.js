@@ -20,7 +20,30 @@
             }
         }
 
-        return check;
+        if(check){
+            var form = $(this),
+                data;
+
+            $.ajax({
+                url: "./admin/insert.php",
+                type: 'POST',
+                data: form.serialize()
+            })
+            .done(function(response) {
+                data = $.parseJSON(response);
+
+                if(data.result == 1){
+                    form[0].reset();
+                }
+                console.log('done', data);
+            })
+            .fail(function(response) {
+                data = $.parseJSON(response);
+                console.log('fail', data);
+            });
+        }
+
+        return false;
     });
 
 

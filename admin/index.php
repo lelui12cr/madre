@@ -47,21 +47,18 @@
                                 <th>Nombre</th>
                                 <th>Teléfono</th>
                                 <th>Email</th>
-                                <th>Provincia canton</th>
-                                <th>Provincia canton de la mamá</th>
-                                <th>Dirección</th>
+                                <th>Provincia</th>
+                                <th>Provincia de la mamá</th>
                                 <th>Razón</th>
                             </tr>
                         </thead>
                         <tfoot>
-
                             <tr>
                                 <th>Nombre</th>
                                 <th>Teléfono</th>
                                 <th>Email</th>
-                                <th>Provincia canton</th>
-                                <th>Provincia canton de la mamá</th>
-                                <th>Dirección</th>
+                                <th>Provincia</th>
+                                <th>Provincia de la mamá</th>
                                 <th>Razón</th>
                             </tr>
                         </tfoot>
@@ -75,9 +72,8 @@
                                 <td> <?php echo $row['name']; ?> </td>
                                 <td> <?php echo $row['phone']; ?> </td>
                                 <td> <?php echo $row['email']; ?> </td>
-                                <td> <?php echo $row['province']." / ".$row['canton']; ?> </td>
-                                <td> <?php echo $row['mother_province']." / ".$row['mother_canton']; ?> </td>
-                                <td> <?php echo $row['address']; ?> </td>
+                                <td> <?php echo $row['province']; ?> </td>
+                                <td> <?php echo $row['mother_province']; ?> </td>
                                 <td> <?php echo $row['reason']; ?> </td>
                             </tr>
 
