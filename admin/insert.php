@@ -11,19 +11,28 @@ if (isset($_POST['name'])) {
 	$mother_province = mysqli_real_escape_string($conn,$_POST['mother_province']);
 	$reason = mysqli_real_escape_string($conn,$_POST['message']);
 
-// Check connection
+	// Check connection
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql_check = "";
+	$sql_check = "SELECT * FROM competitors WHERE email = '".$email."'";
+	$result = mysqli_query($conn, $sql_check);
+	$data = array();
+	$num_rows = mysqli_num_rows($result);
+
+	if ($num_rows > 0) {
+		echo json_encode(array('result' => 2, 'message' => "Ya estas participando."));
+		exit;
+	}
 
 	$sql = "INSERT INTO competitors(name,email,phone,province,mother_province,reason) VALUES ('$name', '$email', '$phone', '$province', '$mother_province', '$reason')";
 
 	if ($conn->query($sql) === TRUE) {
-		$to      = 'nobody@example.com';
-		$subject = 'Información';
-		$message = '
+		$to      = $email;
+		$subject = 'Información concurso';
+		$message = ' Ya estas participando, estos son tus datos: <br><br>
+ 			<hr>
 			<table border="1">
 			    <tr>
 			        <td>Nombre: </td><td>'.$name.'</td>
@@ -58,7 +67,7 @@ if (isset($_POST['name'])) {
 		$response = mail($to, $subject, $message, implode("\r\n", $headers));
 
 		$conn->close();
-		echo json_encode(array('result' => $response));
+		echo json_encode(array('result' => $response, 'message' => "Gracias por participar."));
 		exit;
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;

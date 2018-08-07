@@ -455,10 +455,6 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   max-width: 40rem;
 }
 
-body {
-  background: red;
-}
-
 footer.sticky-footer {
   position: absolute;
   right: 0;

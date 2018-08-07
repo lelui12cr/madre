@@ -31,15 +31,21 @@
             })
             .done(function(response) {
                 data = $.parseJSON(response);
-                console.log('done', data);
+                // console.log('done', data);
 
                 if(data.result == 1){
                     form[0].reset();
+                    $('.wp_message').html(data.message);
+                }
+
+                if(data.result == 2){
+                    form[0].reset();
+                    $('.wp_message').html(data.message);
                 }
             })
             .fail(function(response) {
                 data = $.parseJSON(response);
-                console.log('fail', data);
+                // console.log('fail', data);
             });
         }
 
