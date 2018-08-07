@@ -31,11 +31,11 @@
             })
             .done(function(response) {
                 data = $.parseJSON(response);
+                console.log('done', data);
 
                 if(data.result == 1){
                     form[0].reset();
                 }
-                console.log('done', data);
             })
             .fail(function(response) {
                 data = $.parseJSON(response);
