@@ -1,6 +1,5 @@
 <?php
 if (isset($_POST['name'])) {
-	include('config.php');
 	include('conec.php');
 
 	// receive all input values from the form

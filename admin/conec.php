@@ -1,8 +1,8 @@
 <?php
-include('config.php');
+include('constants.php');
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(SERVER, DB_USER, DB_PASS, DB_NAME);
 
 $table = isset($table) ? $table : 'competitors';
 $sqll = "SELECT * FROM $table";

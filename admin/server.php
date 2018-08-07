@@ -1,12 +1,13 @@
 <?php
 session_start();
+include('constants.php');
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array();
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', 'root', 'mother_day');
+$db = mysqli_connect(SERVER, DB_USER, DB_PASS, DB_NAME);
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
