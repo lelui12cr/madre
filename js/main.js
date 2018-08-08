@@ -22,7 +22,8 @@
 
         if(check){
             var form = $(this),
-                data;
+                data,
+                message = $('.wp_message');
 
             $.ajax({
                 url: "./admin/insert.php",
@@ -31,20 +32,26 @@
             })
             .done(function(response) {
                 data = $.parseJSON(response);
-                // console.log('done', data);
-
-                if(data.result == 1){
-                    form[0].reset();
-                    $('.wp_message').html(data.message);
-                }
-
-                if(data.result == 2){
-                    form[0].reset();
-                    $('.wp_message').html(data.message);
+                console.log('data', data);
+                switch(data.result){
+                    case 1: // Registro agregado correctamente.
+                        form[0].reset();
+                       message.html(data.message);
+                        break;
+                    case 2: // Email no valido
+                       message.html(data.message);
+                        break;
+                    case 3: //email ya se encuentra participando
+                        form[0].reset();
+                       message.html(data.message);
+                        break;
+                    default:
+                       message.html("Ocurrió un error");
                 }
             })
             .fail(function(response) {
                 data = $.parseJSON(response);
+                message.html("Ocurrió un error");
                 // console.log('fail', data);
             });
         }

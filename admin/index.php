@@ -50,6 +50,7 @@
                                 <th>Provincia</th>
                                 <th>Provincia de la mamá</th>
                                 <th>Razón</th>
+                                <th>Fecha inscripción</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -60,6 +61,7 @@
                                 <th>Provincia</th>
                                 <th>Provincia de la mamá</th>
                                 <th>Razón</th>
+                                <th>Fecha inscripción</th>
                             </tr>
                         </tfoot>
 					<?php
@@ -75,6 +77,7 @@
                                 <td> <?php echo $row['province']; ?> </td>
                                 <td> <?php echo $row['mother_province']; ?> </td>
                                 <td> <?php echo $row['reason']; ?> </td>
+                                <td> <?php echo date('d-m-Y h:i:s A', strtotime($row['created_at'])); ?> </td>
                             </tr>
 
                     <?php

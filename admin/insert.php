@@ -3,12 +3,17 @@ if (isset($_POST['name'])) {
 	include('conec.php');
 
 	// receive all input values from the form
+	$email = strtolower(mysqli_real_escape_string($conn,$_POST['email']));
 	$name = mysqli_real_escape_string($conn,$_POST['name']);
 	$phone = mysqli_real_escape_string($conn,$_POST['phone']);
-	$email = strtolower(mysqli_real_escape_string($conn,$_POST['email']));
 	$province = mysqli_real_escape_string($conn,$_POST['province_canton']);
 	$mother_province = mysqli_real_escape_string($conn,$_POST['mother_province']);
 	$reason = mysqli_real_escape_string($conn,$_POST['message']);
+
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		echo json_encode(array('result' => 2, 'message' => "Email incorrecto."));
+		exit;
+	}
 
 	// Check connection
 	if ($conn->connect_error) {
@@ -21,10 +26,11 @@ if (isset($_POST['name'])) {
 	$num_rows = mysqli_num_rows($result);
 
 	if ($num_rows > 0) {
-		echo json_encode(array('result' => 2, 'message' => "Ya estas participando."));
+		echo json_encode(array('result' => 3, 'message' => "Ya estas participando."));
 		exit;
 	}
 
+	date_default_timezone_set('America/Costa_Rica');
 	$sql = "INSERT INTO competitors(name,email,phone,province,mother_province,reason) VALUES ('$name', '$email', '$phone', '$province', '$mother_province', '$reason')";
 
 	if ($conn->query($sql) === TRUE) {
