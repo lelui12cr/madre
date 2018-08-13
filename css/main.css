@@ -302,7 +302,13 @@ iframe {
   line-height: 1.6;
   color: #00ad5f;
 }
-
+.wrap-contact100 p{
+    color: #333;
+    padding: 19px 0;
+}
+.contenido-madre p{
+    color: #fff;
+}
 /*==================================================================
 [ Size ]*/
 .size1 {
