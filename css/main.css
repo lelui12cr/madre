@@ -233,7 +233,7 @@ iframe {
 }
 
 .contenido-madre {
-    height: 80vw;
+    height: 100vw;
 	color: #fff;
 	background: linear-gradient(-45deg, #F02A2A, #E73C7E);
 	background-size: 400% 400%;
@@ -575,6 +575,9 @@ textarea.input100 {
   .contact100-form {
     padding: 110px 15px 55px 15px;
   }
+    .contenido-madre{
+        height: 130vw;
+    }
 }
 
 
